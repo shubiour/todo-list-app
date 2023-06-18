@@ -6,18 +6,20 @@ import '../controller/todo_controller.dart';
 class HomePage extends StatelessWidget {
   final TodoController todoController = Get.put(TodoController());
 
+  HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('To-Do List'),
+        title: const Text('To-Do List'),
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
             onPressed: () => todoController.addTodo(),
           ),
           IconButton(
-            icon: Icon(Icons.delete_outline),
+            icon: const Icon(Icons.delete_outline),
             onPressed: () => todoController.clearCompletedTodos(),
           ),
         ],
@@ -25,9 +27,9 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Search',
               ),
               onChanged: (value) {
@@ -54,7 +56,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       trailing: IconButton(
-                        icon: Icon(Icons.delete),
+                        icon: const Icon(Icons.delete),
                         onPressed: () => todoController.deleteTodo(index),
                       ),
                     );

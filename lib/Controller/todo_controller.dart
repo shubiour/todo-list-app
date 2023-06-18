@@ -29,7 +29,7 @@ class TodoController extends GetxController {
       content: TextFormField(
         autofocus: true,
         controller: titleController,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           labelText: 'Title',
         ),
       ),
